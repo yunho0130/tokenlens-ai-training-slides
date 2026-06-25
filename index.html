@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TokenLens 기반 AI 성취도 측정·개선 1주 집체교육 제안</title>
+  <meta name="description" content="TokenLens를 활용해 수강생의 AI 활용 성취도를 측정하고 개선하는 1주 집체교육 제안 슬라이드" />
+  <style>
+    :root{
+      --bg:#f7f1e8; --paper:#fffaf1; --ink:#231f1a; --muted:#74695f; --soft:#e9ddcf;
+      --line:#dac9b7; --coral:#cc785c; --coral-2:#a5523f; --olive:#667355; --navy:#263247;
+      --gold:#c9a34e; --shadow:0 30px 70px rgba(51,38,25,.16); --radius:32px;
+      --deck-w:1920; --deck-h:1080;
+    }
+    *{box-sizing:border-box} html,body{height:100%;margin:0;background:radial-gradient(circle at 20% 10%,#fff7e9 0,#f7f1e8 40%,#eee2d5 100%);color:var(--ink);font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;}
+    body{overflow:hidden}.app{height:100%;display:grid;place-items:center;padding:24px}.stage{width:min(100vw - 48px, calc((100vh - 88px) * 16/9));aspect-ratio:16/9;position:relative}.deck{position:absolute;inset:0;transform-origin:top left;background:var(--paper);box-shadow:var(--shadow);border-radius:24px;overflow:hidden;border:1px solid rgba(80,60,36,.12)}
+    .slide{position:absolute;inset:0;width:100%;height:100%;padding:82px 98px;display:none;background:linear-gradient(135deg,var(--paper),#fdf5e8 52%,#f3e5d6);overflow:hidden}.slide.active{display:block}.slide::before{content:"";position:absolute;inset:30px;border:1px solid rgba(103,82,59,.14);border-radius:28px;pointer-events:none}.slide::after{content:"";position:absolute;width:520px;height:520px;right:-160px;bottom:-210px;border-radius:50%;background:radial-gradient(circle,rgba(204,120,92,.18),rgba(204,120,92,0) 68%);pointer-events:none}.kicker{font-size:22px;letter-spacing:.13em;text-transform:uppercase;color:var(--coral-2);font-weight:800;margin:0 0 20px}.title{font-family:Georgia,"Noto Serif KR",serif;font-size:78px;line-height:1.02;letter-spacing:-.045em;margin:0;max-width:1380px}.subtitle{font-size:34px;line-height:1.45;color:var(--muted);margin:34px 0 0;max-width:1280px}.big{font-size:96px;line-height:.96}.grid{display:grid;gap:28px}.cols-2{grid-template-columns:1fr 1fr}.cols-3{grid-template-columns:repeat(3,1fr)}.card{background:rgba(255,250,241,.7);border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 12px 34px rgba(61,44,26,.07)}.card.dark{background:#2b2a25;color:#fff;border-color:#3c362f}.card h3{font-size:34px;line-height:1.2;margin:0 0 16px}.card p,.card li{font-size:24px;line-height:1.45;color:var(--muted);margin:0}.card.dark p,.card.dark li{color:#ddd0c3}.num{font-family:Georgia,serif;font-size:84px;line-height:1;color:var(--coral);letter-spacing:-.06em}.metric-label{font-size:22px;color:var(--muted);margin-top:12px}.bar{height:18px;border-radius:99px;background:#eadccc;overflow:hidden;margin-top:18px}.bar>span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--coral),var(--gold))}.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;background:rgba(255,250,241,.78);font-size:22px;color:var(--muted);font-weight:700}.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:42px}.day{min-height:440px;padding:28px;border-radius:26px;background:rgba(255,250,241,.78);border:1px solid var(--line);position:relative}.day b{display:block;font-size:24px;color:var(--coral-2);margin-bottom:20px}.day h3{font-size:32px;line-height:1.15;margin:0 0 18px}.day p{font-size:21px;line-height:1.42;color:var(--muted);margin:0}.quote{font-family:Georgia,"Noto Serif KR",serif;font-size:58px;line-height:1.15;letter-spacing:-.035em;margin:0}.footer{position:absolute;left:98px;right:98px;bottom:48px;display:flex;align-items:center;justify-content:space-between;color:#8a7a6a;font-size:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--ink)}.spark{width:24px;height:24px;background:var(--coral);clip-path:polygon(50% 0,58% 36%,90% 10%,67% 45%,100% 50%,67% 55%,90% 90%,58% 64%,50% 100%,42% 64%,10% 90%,33% 55%,0 50%,33% 45%,10% 10%,42% 36%)}.nav{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:rgba(35,31,26,.88);color:#fff;padding:10px 14px;border-radius:999px;backdrop-filter:blur(12px);font-size:14px}.nav button{border:0;background:rgba(255,255,255,.12);color:white;border-radius:999px;width:34px;height:34px;cursor:pointer}.nav button:hover{background:rgba(255,255,255,.22)}.progress{position:fixed;left:0;right:0;top:0;height:4px;background:rgba(0,0,0,.07)}.progress span{display:block;height:100%;background:var(--coral);width:0}.watermark{position:absolute;right:90px;top:66px;font-size:18px;color:#927f6b}.matrix{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:18px;margin-top:30px}.matrix .head{font-weight:900;color:var(--ink);background:#efe2d1}.matrix div{padding:20px;border-radius:18px;border:1px solid var(--line);font-size:22px;line-height:1.35;color:var(--muted);background:rgba(255,250,241,.72)}.hero-ring{position:absolute;right:130px;top:150px;width:430px;height:430px;border-radius:50%;border:34px solid rgba(204,120,92,.18);display:grid;place-items:center}.hero-ring span{font-size:68px;font-family:Georgia,serif;color:var(--coral-2)}.slide.cover{background:linear-gradient(135deg,#27251f,#3a3028 52%,#7b473d);color:#fff}.cover .kicker,.cover .subtitle{color:#f0d6c7}.cover::before{border-color:rgba(255,255,255,.14)}.cover .footer,.cover .brand{color:#f4e7dc}.cover::after{background:radial-gradient(circle,rgba(255,202,134,.25),rgba(255,202,134,0) 68%)}.cover .title{max-width:1180px}.check li{margin:12px 0}.small{font-size:20px;color:var(--muted);line-height:1.45}.focus-list{display:grid;gap:14px;margin-top:30px}.focus-list div{display:flex;gap:16px;align-items:flex-start;font-size:26px;line-height:1.35}.dot{width:14px;height:14px;background:var(--coral);border-radius:50%;margin-top:12px;flex:none}@media print{body{overflow:visible;background:white}.app{display:block;padding:0}.stage,.deck{width:1920px;height:1080px;position:relative;box-shadow:none;border-radius:0}.slide{display:block;position:relative;page-break-after:always}.nav,.progress{display:none}}@media (prefers-reduced-motion:no-preference){.slide.active .title,.slide.active .card,.slide.active .day{animation:rise .45s ease both}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}}
+  </style>
+</head>
+<body>
+  <div class="progress"><span id="progress"></span></div>
+  <main class="app" aria-label="TokenLens 교육과정 제안 슬라이드">
+    <div class="stage"><section class="deck" id="deck">
+      <article class="slide cover active" data-title="Cover">
+        <p class="kicker">1주 집체교육 제안</p>
+        <h1 class="title big">TokenLens 기반<br/>AI 성취도 측정·개선 교육과정</h1>
+        <p class="subtitle">수강생의 실제 AI 대화 데이터를 16개 평가 dimension으로 진단하고, 개인별 개선 계획을 생성해 5일 안에 업무 적용 역량까지 끌어올립니다.</p>
+        <div class="hero-ring"><span>AI</span></div>
+        <div class="footer"><span class="brand"><i class="spark"></i>TokenLens × Squarelight</span><span>Proposal Deck · 10 slides</span></div>
+      </article>
+
+      <article class="slide" data-title="Why now">
+        <p class="kicker">왜 지금인가</p><h2 class="title">AI 교육의 병목은 “수강 여부”가 아니라 “성취도 증명”입니다.</h2>
+        <div class="grid cols-3" style="margin-top:56px">
+          <div class="card"><div class="num">01</div><h3>성과가 보이지 않음</h3><p>교육 전후 비교가 설문·만족도에 머물면 실제 업무 활용 개선을 설명하기 어렵습니다.</p></div>
+          <div class="card"><div class="num">02</div><h3>수준 차이가 큼</h3><p>챔피언 후보, 표준 사용자, 리스크 사용자가 섞여 있어 동일 커리큘럼만으로는 효율이 떨어집니다.</p></div>
+          <div class="card"><div class="num">03</div><h3>개선 처방이 없음</h3><p>누가 어떤 dimension에서 막히는지 확인해야 개인별 훈련 과제가 만들어집니다.</p></div>
+        </div><div class="footer"><span class="brand"><i class="spark"></i>TokenLens</span><span>←/→ 키로 이동</span></div>
+      </article>
+
+      <article class="slide" data-title="Solution">
+        <p class="kicker">솔루션 활용 방식</p><h2 class="title">TokenLens는 AI 활용 로그를 “평가 → 유형화 → 개선계획”으로 바꿉니다.</h2>
+        <div class="grid cols-3" style="margin-top:58px">
+          <div class="card dark"><h3>1. 데이터 업로드</h3><p>Claude/AI 대화 export를 배치로 업로드하고 사용자별 활동량·대화량을 집계합니다.</p></div>
+          <div class="card dark"><h3>2. 16개 dimension 평가</h3><p>학술 기준과 산업 활용 기준을 결합해 프롬프트, 근거, 도구활용, 안전성을 점수화합니다.</p></div>
+          <div class="card dark"><h3>3. 개선 계획 생성</h3><p>평가 완료 사용자별로 맞춤형 AI 활용 개선 계획을 생성하고 교육 과제로 연결합니다.</p></div>
+        </div>
+        <div class="matrix">
+          <div class="head">입력</div><div class="head">분석</div><div class="head">교육 산출물</div>
+          <div>대화 로그·사용자·배치</div><div>dimension 평균, champion/abuse/risk/waste index</div><div>개인별 개선계획, 코칭 과제, 사후 리포트</div>
+        </div><div class="footer"><span class="brand"><i class="spark"></i>TokenLens</span><span>측정 가능한 AI 교육</span></div>
+      </article>
+
+      <article class="slide" data-title="Baseline evidence">
+        <p class="kicker">데모 데이터에서 보이는 교육 포인트</p><h2 class="title">현재 강점은 안전성, 약점은 고급 업무화 역량입니다.</h2>
+        <div class="grid cols-3" style="margin-top:52px">
+          <div class="card"><div class="num">16</div><div class="metric-label">평가 dimension</div><div class="bar"><span style="width:100%"></span></div></div>
+          <div class="card"><div class="num">3.17</div><div class="metric-label">Academic 평균 / 5</div><div class="bar"><span style="width:63%"></span></div></div>
+          <div class="card"><div class="num">2.08</div><div class="metric-label">Industry 평균 / 5</div><div class="bar"><span style="width:42%"></span></div></div>
+        </div>
+        <div class="grid cols-2" style="margin-top:34px">
+          <div class="card"><h3>상위 역량</h3><p>Harmlessness 4.67, Dialog Coherence 3.40, Helpfulness 3.40 — 안전하고 일관된 기본 활용은 확보.</p></div>
+          <div class="card"><h3>하위 역량</h3><p>도구·에이전트 활용 0.53, 코드 추론 깊이 1.07, 작업 분해 2.00 — 복잡한 업무 전환 훈련 필요.</p></div>
+        </div><div class="footer"><span class="brand"><i class="spark"></i>TokenLens</span><span>Source: tokenlens.squarelight.ai demo API</span></div>
+      </article>
+
+      <article class="slide" data-title="Evaluation framework">
+        <p class="kicker">평가 프레임</p><h2 class="title">성취도는 지식시험이 아니라 실제 AI 협업 행동으로 측정합니다.</h2>
+        <div class="grid cols-2" style="margin-top:54px">
+          <div class="card"><h3>Academic dimensions</h3><ul class="check"><li>Instruction Following · Helpfulness</li><li>Factuality/Grounding · Calibration</li><li>Reasoning Quality · Dialog Coherence</li><li>Honesty/Faithfulness · Harmlessness</li></ul></div>
+          <div class="card"><h3>Industry dimensions</h3><ul class="check"><li>Prompt Clarity · Context Grounding</li><li>Task Decomposition · Iterative Refinement</li><li>Tool/Agentic Use · Code Reasoning Depth</li><li>Business Impact · Governance Safety</li></ul></div>
+        </div>
+        <p class="quote" style="margin-top:46px">“잘 썼다”를 0–5점 루브릭과 개선 행동으로 번역합니다.</p><div class="footer"><span class="brand"><i class="spark"></i>TokenLens</span><span>16 dimensions · rubric based</span></div>
+      </article>
+
+      <article class="slide" data-title="Training architecture">
+        <p class="kicker">1주 집체교육 구조</p><h2 class="title">사전 진단부터 사후 개선계획까지 하나의 루프로 설계합니다.</h2>
+        <div class="timeline">
+          <div class="day"><b>Day 0</b><h3>사전 업로드·진단</h3><p>수강생 AI 대화 데이터 수집, TokenLens 배치 업로드, 개인별 baseline 생성.</p></div>
+          <div class="day"><b>Day 1</b><h3>AI 협업 기본기</h3><p>프롬프트 명료성, 역할·맥락·제약·출력 형식 설계 훈련.</p></div>
+          <div class="day"><b>Day 2</b><h3>근거와 검증</h3><p>출처 요구, 불확실성 관리, 사실성/정직성 점검 루틴 내재화.</p></div>
+          <div class="day"><b>Day 3</b><h3>복잡 업무 분해</h3><p>업무를 하위 태스크로 나누고 중간 검증·통합하는 agentic workflow 실습.</p></div>
+          <div class="day"><b>Day 4–5</b><h3>현업 과제·개선계획</h3><p>개인별 취약 dimension을 보완하는 실전 프로젝트와 최종 리포트.</p></div>
+        </div><div class="footer"><span class="brand"><i class="spark"></i>TokenLens</span><span>1 week intensive bootcamp</span></div>
+      </article>
+
+      <article class="slide" data-title="Curriculum modules">
+        <p class="kicker">커리큘럼 모듈</p><h2 class="title">낮은 점수 dimension을 직접 끌어올리는 실습 중심 모듈입니다.</h2>
+        <div class="grid cols-2" style="margin-top:50px">
+          <div class="card"><h3>Prompt Clarity Lab</h3><p>한 줄 질문을 역할·맥락·제약·검증 기준이 포함된 업무 프롬프트로 재작성.</p></div>
+          <div class="card"><h3>Context Grounding Clinic</h3><p>파일, 이전 결정, 데이터, 레퍼런스를 제공해 환각을 줄이는 컨텍스트 패키징.</p></div>
+          <div class="card"><h3>Task Decomposition Studio</h3><p>복잡한 요청을 계획·실행·검토·통합 단계로 분해하고 checkpoint를 설계.</p></div>
+          <div class="card"><h3>Tool & Agent Workflow</h3><p>검색, 문서, 코드, 자동화 도구를 연결해 반복 업무를 end-to-end로 완성.</p></div>
+        </div><div class="footer"><span class="brand"><i class="spark"></i>TokenLens</span><span>실습 → 평가 → 재실습</span></div>
+      </article>
+
+      <article class="slide" data-title="Personalization">
+        <p class="kicker">개인화 코칭</p><h2 class="title">동일 강의가 아니라 사용자 유형별 처방으로 운영합니다.</h2>
+        <div class="grid cols-3" style="margin-top:54px">
+          <div class="card"><span class="pill">AI 챔피언 후보</span><h3 style="margin-top:24px">확산 리더로 육성</h3><p>고급 workflow, 사내 템플릿 제작, 동료 코칭 역할 부여.</p></div>
+          <div class="card"><span class="pill">표준 사용자</span><h3 style="margin-top:24px">업무 적용률 향상</h3><p>반복 업무 use case 발굴, 프롬프트/컨텍스트 기본기 강화.</p></div>
+          <div class="card"><span class="pill">검토 필요 사용자</span><h3 style="margin-top:24px">리스크·낭비 교정</h3><p>금지목적·비효율 패턴을 식별하고 거버넌스 가이드에 맞게 재훈련.</p></div>
+        </div>
+        <p class="subtitle" style="font-size:30px">TokenLens improvement plan 화면에서 사용자별 개선 계획을 생성해 1:1 피드백 시트로 전환합니다.</p><div class="footer"><span class="brand"><i class="spark"></i>TokenLens</span><span>role-based coaching</span></div>
+      </article>
+
+      <article class="slide" data-title="Measurement loop">
+        <p class="kicker">성과 측정 루프</p><h2 class="title">교육 효과는 전후 점수 변화와 업무 산출물 품질로 검증합니다.</h2>
+        <div class="grid cols-2" style="margin-top:52px">
+          <div class="card"><h3>정량 지표</h3><div class="focus-list"><div><i class="dot"></i><span>dimension별 pre/post 평균 변화</span></div><div><i class="dot"></i><span>Industry avg, feature breadth, champion index 변화</span></div><div><i class="dot"></i><span>위험/낭비 index 감소 및 정책 준수율</span></div></div></div>
+          <div class="card"><h3>정성 지표</h3><div class="focus-list"><div><i class="dot"></i><span>현업 과제 산출물 리뷰</span></div><div><i class="dot"></i><span>개인별 개선계획 이행 체크</span></div><div><i class="dot"></i><span>팀별 AI 활용 playbook 제출</span></div></div></div>
+        </div>
+        <div class="card dark" style="margin-top:34px"><h3>최종 리포트</h3><p>조직 평균, 개인별 진단, 취약 dimension, 추천 후속 교육, 내부 AI 챔피언 후보를 한 번에 제공합니다.</p></div><div class="footer"><span class="brand"><i class="spark"></i>TokenLens</span><span>pre/post evidence</span></div>
+      </article>
+
+      <article class="slide" data-title="Engagement plan">
+        <p class="kicker">제안 운영안</p><h2 class="title">1주일 후, 수강생은 “AI를 써본 사람”이 아니라 “측정 가능한 AI 업무 수행자”가 됩니다.</h2>
+        <div class="grid cols-3" style="margin-top:52px">
+          <div class="card"><div class="num">5일</div><h3>집체교육</h3><p>강의 30%, 실습 50%, 개인·팀 코칭 20% 구성.</p></div>
+          <div class="card"><div class="num">2회</div><h3>TokenLens 평가</h3><p>Day 0 baseline과 Day 5 post-assessment 비교.</p></div>
+          <div class="card"><div class="num">3종</div><h3>납품 산출물</h3><p>개인 리포트, 조직 대시보드 요약, 후속 개선 로드맵.</p></div>
+        </div>
+        <p class="quote" style="margin-top:54px">다음 단계: 대상 조직의 AI 대화 export 범위와 현업 과제 3개를 확정하면 상세 운영계획으로 전환합니다.</p><div class="footer"><span class="brand"><i class="spark"></i>Squarelight</span><span>tokenlens@squarelight.ai</span></div>
+      </article>
+    </section></div>
+  </main>
+  <nav class="nav" aria-label="슬라이드 내비게이션"><button id="prev" aria-label="이전 슬라이드">‹</button><span id="count">1 / 10</span><button id="next" aria-label="다음 슬라이드">›</button></nav>
+  <script>
+    const slides=[...document.querySelectorAll('.slide')];
+    const count=document.getElementById('count'); const progress=document.getElementById('progress');
+    let current=Math.min(Math.max(parseInt(localStorage.getItem('tokenlensDeckSlide')||'0',10),0),slides.length-1);
+    function show(i){current=(i+slides.length)%slides.length;slides.forEach((s,idx)=>s.classList.toggle('active',idx===current));count.textContent=`${current+1} / ${slides.length}`;progress.style.width=`${((current+1)/slides.length)*100}%`;localStorage.setItem('tokenlensDeckSlide',String(current));document.title=`${current+1}. ${slides[current].dataset.title} · TokenLens 교육 제안`;}
+    document.getElementById('prev').onclick=()=>show(current-1); document.getElementById('next').onclick=()=>show(current+1);
+    window.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1)} if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1)} if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);});
+    show(current);
+  </script>
+</body>
+</html>
